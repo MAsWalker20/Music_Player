@@ -16,7 +16,7 @@ body {
 }
 
 .trackItem {
-    color: rgb(232, 232, 31);
+    color: rgba(232, 232, 31, 0.712);
     font-size: 20px;
     border-bottom: 1px solid #6c757d;
     padding: 10px 0px;
@@ -25,7 +25,7 @@ body {
 }
 
 .trackItem:hover {
-    color: red;
+    color: rgba(244, 35, 35, 0.817);
 }
 
 .musicPlayer {
@@ -45,6 +45,14 @@ body {
     
 }
 
+#progressBar {
+    width: 250px;
+    height: 5px;
+    background-color: lightgray;
+    border-radius: 10px;
+    opacity: 0;
+}
+
 .controls {
     font-size: 30px;
     color: #fff;
@@ -55,3 +63,6 @@ body {
     display: none;
 }
 
+.currentAndTotleTime {
+    color: lightblue;
+}

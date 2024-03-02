@@ -30,19 +30,13 @@ audioTag.addEventListener('loadeddata', () => {
     const duration = Math.floor(audioTag.duration);
     durationText = createMinandSecText(duration)
 });
-const myFunction = () => {
-    currentAndTotleTimeTag.style.color = "lightblue";
-    currentAndTotleTimeTag.style.fontSize = "20px";
-    progressBarTag.style.width = "200px";
-    progressBarTag.style.height = "5px";
-    progressBarTag.style.backgroundColor = "lightgray";
-    progressBarTag.style.borderRadius = "10px";
-    currentProgressTag.style.width = "0%";
-    currentProgressTag.style.height = "100%";
-    currentProgressTag.style.background = "red";
-    musicPlayerTag.style.opacity = "1";
 
+const myFunction = () => {
+    currentAndTotleTimeTag.style.opacity = "1"
+    progressBarTag.style.opacity = "1";
+    musicPlayerTag.style.opacity = "1"
 }
+
 audioTag.addEventListener("timeupdate", () => {
     const currentTime = Math.floor(audioTag.currentTime);
     const currentTimeText =  createMinandSecText(currentTime);
