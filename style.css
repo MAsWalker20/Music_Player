@@ -31,20 +31,14 @@ body {
 .musicPlayer {
     display: flex;
     flex-direction: row;
+    opacity: 0;
 }
 
 .currentAndTotleTime {
     margin-bottom: 10px;
 }
 
-#progressBar {
-    width: 400px;
-    height: 5px;
-    background-color: lightgray;
-    border-radius: 10px;
-}
-
-#currentProgress {
+.currentProgress {
     width: 0%;
     height: 100%;
     background-color: red;
