@@ -33,7 +33,7 @@ audioTag.addEventListener("timeupdate", () => {
     const currentTimeText =  createMinandSecText(currentTime);
     const currentTimeTextAndDurationText = currentTimeText + " / " + durationText;
     currentAndTotleTimeTag.textContent = currentTimeTextAndDurationText;
-    currentAndTotleTimeTag.style.color = "yellow";
+    currentAndTotleTimeTag.style.color = "lightblue";
     currentAndTotleTimeTag.style.fontSize = "20px"
     
 });
