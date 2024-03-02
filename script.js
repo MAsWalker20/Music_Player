@@ -34,7 +34,8 @@ audioTag.addEventListener('loadeddata', () => {
 const myFunction = () => {
     currentAndTotleTimeTag.style.opacity = "1"
     progressBarTag.style.opacity = "1";
-    musicPlayerTag.style.opacity = "1"
+    musicPlayerTag.style.opacity = "1";
+    
 }
 
 audioTag.addEventListener("timeupdate", () => {

@@ -32,16 +32,19 @@ body {
     display: flex;
     flex-direction: row;
     opacity: 0;
+    transition: all 1.5s ease-in;
 }
 
 .currentAndTotleTime {
     margin-bottom: 10px;
+    
 }
 
 .currentProgress {
     width: 0%;
     height: 100%;
     background-color: red;
+    transition: all 1.5s ease-in;
     
 }
 
@@ -51,6 +54,7 @@ body {
     background-color: lightgray;
     border-radius: 10px;
     opacity: 0;
+    transition: all 1.5s ease-in;
 }
 
 .controls {
