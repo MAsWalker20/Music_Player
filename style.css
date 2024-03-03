@@ -37,7 +37,8 @@ body {
 
 .currentAndTotleTime {
     margin-bottom: 10px;
-    
+    opacity: 0;
+    transition: all 1s ease-in-out;
 }
 
 .currentProgress {

@@ -18,6 +18,8 @@ for (let i = 0; i < tracks.length; i++) {
         const trackId = tracks[i].trackId;
         audioTag.src = trackId;
         audioTag.play(); 
+        opacity = currentAndTotleTimeTag.style.opacity = "1";
+       
     });
     trackTag.classList.add('trackItem');
     const title = (i + 1).toString() + ". " + tracks[i].title;
@@ -34,9 +36,8 @@ audioTag.addEventListener('loadeddata', () => {
 const myFunction = () => {
     currentAndTotleTimeTag.style.opacity = "1"
     progressBarTag.style.opacity = "1";
-    musicPlayerTag.style.opacity = "1";
-    
-}
+    musicPlayerTag.style.opacity = "1";   
+};
 
 audioTag.addEventListener("timeupdate", () => {
     const currentTime = Math.floor(audioTag.currentTime);
