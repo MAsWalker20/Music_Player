@@ -41,8 +41,8 @@ body {
     transition: all 1s ease-in-out;
 }
 
-.currentProgress {
-    width: 0%;
+#currentProgress {
+    width: 10%;
     height: 100%;
     background-color: red;
     transition: all 1.5s ease-in;
