@@ -42,7 +42,7 @@ body {
 }
 
 #currentProgress {
-    width: 10%;
+    width: 0px;
     height: 100%;
     background-color: red;
     transition: all 1.5s ease-in;

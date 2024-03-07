@@ -28,11 +28,11 @@ for (let i = 0; i < tracks.length; i++) {
 };
 
 let durationText = "00:00"
+let duration = 0;
 audioTag.addEventListener('loadeddata', () => {
-    const duration = Math.floor(audioTag.duration);
+     duration = Math.floor(audioTag.duration);
     durationText = createMinandSecText(duration)
 });
-
 const myFunction = () => {
     currentAndTotleTimeTag.style.opacity = "1"
     progressBarTag.style.opacity = "1";
@@ -44,9 +44,15 @@ audioTag.addEventListener("timeupdate", () => {
     const currentTimeText =  createMinandSecText(currentTime);
     const currentTimeTextAndDurationText = currentTimeText + " / " + durationText;
     currentAndTotleTimeTag.textContent = currentTimeTextAndDurationText;
-    myFunction()
-    
+    myFunction();
+    updateCurrentProgress(currentTime);
+
 });
+
+const updateCurrentProgress = (currentTime) => {
+    const currentProgressWidth = (250/duration) * currentTime;
+    currentProgressTag.style.width = currentProgressWidth.toString() + "px"; //5px
+};
 
 const createMinandSecText = (total) =>{
     const min = Math.floor(total / 60);
@@ -56,4 +62,4 @@ const createMinandSecText = (total) =>{
     const secText = sec < 10 ? "0" + sec.toString() : sec;
 
     return minText + ":" + secText;
-}
+};
