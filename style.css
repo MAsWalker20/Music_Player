@@ -55,7 +55,7 @@ body {
     background-color: lightgray;
     border-radius: 10px;
     opacity: 0;
-    transition: all 1.5s ease-out;
+    transition: all 1.5s ease;
 }
 
 .controls {

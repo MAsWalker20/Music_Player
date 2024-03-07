@@ -26,6 +26,7 @@ for (let i = 0; i < tracks.length; i++) {
         audioTag.src = trackId;
         audioTag.play(); 
         opacity = currentAndTotleTimeTag.style.opacity = "1";
+        currentPLayingIndex = i;
        
     });
     trackTag.classList.add('trackItem');
@@ -103,3 +104,25 @@ const updatePlayAndPause = () => {
     }
 }
 
+previousButtonTag.addEventListener('click', () => {
+    if (currentPLayingIndex === 0) {
+        return;
+    }
+        currentPLayingIndex -= 1;
+        const songToPlay = tracks[currentPLayingIndex].trackId;
+        audioTag.src = songToPlay;
+        audioTag.play();
+        isPlaying = true;
+        updatePlayAndPause();
+    
+});
+
+nextButtonTag.addEventListener('click', () => {
+    if (currentPLayingIndex === tracks.length -1) {
+        return;
+    }
+    currentPLayingIndex += 1;
+    const songIdToPlay = tracks[currentPLayingIndex].trackId;
+    audioTag.src = songIdToPlay;
+    audioTag.play();
+});
