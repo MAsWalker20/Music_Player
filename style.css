@@ -32,13 +32,13 @@ body {
     display: flex;
     flex-direction: row;
     opacity: 0;
-    transition: all 1.5s ease-in;
+    transition: all 1.5s ease-in; 
 }
 
 .currentAndTotleTime {
     margin-bottom: 10px;
     opacity: 0;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-out;
 }
 
 #currentProgress {
@@ -55,7 +55,7 @@ body {
     background-color: lightgray;
     border-radius: 10px;
     opacity: 0;
-    transition: all 1.5s ease-in;
+    transition: all 1.5s ease-out;
 }
 
 .controls {
@@ -64,7 +64,7 @@ body {
     margin: 20px 40px;
     cursor: pointer;
 }
-.pauseButton {
+.playButton {
     display: none;
 }
 

@@ -4,12 +4,19 @@ const currentAndTotleTimeTag = document.getElementsByClassName('currentAndTotleT
 const progressBarTag = document.getElementById('progressBar');
 const currentProgressTag = document.getElementById('currentProgress');
 const musicPlayerTag = document.getElementsByClassName('musicPlayer')[0];
+const previousButtonTag = document.getElementsByClassName('previousButton')[0];
+const playButtonTag = document.getElementsByClassName('playButton')[0];
+const pauseButtonTag = document.getElementsByClassName('pauseButton')[0];
+const nextButtonTag = document.getElementsByClassName('nextButton')[0];
+
 
 const tracks = [
     { trackId: "music/track1.mp3", title: 'ဒဿ'},
     { trackId: "music/track5.mp3", title: 'Unforgettable'},
     { trackId: "music/track6.mp3", title: 'Why??'},
-    { trackId: "music/track7.mp3", title: 'Heat Waves'}
+    { trackId: "music/track7.mp3", title: 'Heat Waves'},
+    { trackId: "music/MaMyint.mp3", title: 'Ma Myint'},
+    { trackId: "music/All about love.mp3", title: 'All about love'}
 ];
 
 for (let i = 0; i < tracks.length; i++) {
@@ -33,6 +40,7 @@ audioTag.addEventListener('loadeddata', () => {
      duration = Math.floor(audioTag.duration);
     durationText = createMinandSecText(duration)
 });
+
 const myFunction = () => {
     currentAndTotleTimeTag.style.opacity = "1"
     progressBarTag.style.opacity = "1";
@@ -63,3 +71,35 @@ const createMinandSecText = (total) =>{
 
     return minText + ":" + secText;
 };
+
+let currentPLayingIndex = 0;
+let isPlaying = false;
+playButtonTag.addEventListener('click', () => {
+    const currentTime = Math.floor(audioTag.currentTime);
+    isPlaying = true;
+    if (currentTime === 0) {
+        const songIdToPlay = tracks[currentPLayingIndex].trackId;
+        audioTag.src = songIdToPlay;
+        audioTag.play();
+    } else {
+        audioTag.play();
+        updatePlayAndPause();
+    };
+});
+
+pauseButtonTag.addEventListener('click', () => {
+    isPlaying = false;
+    audioTag.pause();
+    updatePlayAndPause();
+});
+
+const updatePlayAndPause = () => {
+    if(isPlaying){
+        playButtonTag.style.display = "none";
+        pauseButtonTag.style.display = "inline";
+    }else {
+        playButtonTag.style.display = "inline";
+        pauseButtonTag.style.display = "none";
+    }
+}
+
